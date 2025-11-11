@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TechyPC</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="icon" href="imago/weblogocoloredbg.png">
+</head>
+
+
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop hidden>
+    <source src="ROYALTY FREE Technology Background Music  Presentation Music Royalty Free by MUSIC4VIDEO.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="floating-logo">
+    <img src="C:\Users\JohnLloyd\Downloads\weblogomodeRbg_withBLUE.png" alt="Logo" class="logo-default">
+    <img src="How to Choose or Build the Perfect Computer for You.jpeg" alt="Logo Hover" class="logo-hover">
+  </div>
+
+  <div class="promo-bar">
+    <div class="scrolling-text">
+      🎉 Free Shipping for orders ₱3,000+ | 💻 New arrivals every week! | 🕹️ Build your dream PC today!
+    </div>
+  </div>
+
+ <!-- HEADER / NAV -->
+  <header>
+    <div class="logo"><img src="imago/weblogowhite.png" alt=""></div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <button id="searchButton">Search</button>
+    </div>
+
+    <script>
+      document.getElementById("searchButton").addEventListener("click", function() {
+        const query = document.getElementById("searchInput").value.trim();
+        if (query) {
+          // Redirect to products.html with the search term in URL
+          window.location.href = `allproducts.html?search=${encodeURIComponent(query)}`;
+        }
+      });
+
+      // Also allow pressing "Enter" to search
+      document.getElementById("searchInput").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+          document.getElementById("searchButton").click();
+        }
+      });
+
+    </script>
+
+    <nav id="navbar">
+      <a href="Homepage.html">Home</a>
+      <a href="allproducts.html">Products</a>
+      <a href="allproducts.html">About</a>
+      <a href="#foota">Contact</a>
+      <a href="#" class="cta" id="cart-icon"><img class="cta-cart" src="imago/online-store.png" alt="Cart"><span id="cart-counter">0</span>
+</a>
+
+    
+  </header>
+
+  <!-- HERO SECTION (video ONLY here) -->
+  <section id="navhome" class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="videoh/Virtual_City_Animation1080P_HD1-ezgif.com-crop-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <h1>Build Your Setup and Customize Your Style in TechyPC.</h1>
+      <p>Discover high-performance components, accessories, and custom PC builds designed for gamers, creators, and professionals.</p>
+      <button>Explore now</button>
+    </div>
+
+    <div class="affairs_logo">
+      <a href=""><img src="imago/slsu_logo.png" alt=""></a>
+      <a href=""><img src="imago/1-removebg-preview.png" alt=""></a>
+      <a href=""><img src="imago/2-removebg-preview.png" alt=""></a>
+      <a href=""><img src="imago/myowncptlogo.png" alt=""></a>
+    </div>
+
+    <div class="web_location">
+      <img src="imago/locpin.png" alt="">
+      <p>Southern Luzon State University Main Campus</p>
+    </div>
+
+    <div class="sharelogo">
+      <p>Share:</p>
+      <a href=""><img src="imago/facebookcircle.png" alt=""></a>
+      <a href=""><img src="imago/instagramcircle.png" alt=""></a>
+      <a href=""><img src="imago/twittercircle.png" alt=""></a>
+    </div>
+  </section>
+
+  <section id="upper-fea">
+<div class="slider-container">
+  <div class="slides">
+
+    <div class="slide"><img src="imago/BANNER (1).png" alt="Banner 1"></div>
+    <div class="slide"><img src="imago/BANNER (2).png" alt="Banner 2"></div>
+    <div class="slide"><img src="imago/BANNER (3).png" alt="Banner 3"></div>
+    <div class="slide"><img src="imago/BANNER (4).png" alt="Banner 4"></div>
+    <div class="slide"><img src="imago/BANNER (5).png" alt="Banner 5"></div>
+
+  </div>
+
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+</div>
+  </section>
+
+  <section id="categories">
+  <h2 class="h2cat">CATEGORIES</h2>
+  <div class="category-grid">
+
+    <div class="category-item">
+      <img src="imago/Gigabyte AORUS X570 Master   .JPG" alt="Graphics Cards">
+      <p>Motherboard</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Intel Core i5-14600K .WEBP" alt="Processors">
+      <p>CPU</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Gigabyte AORUS GeForce RTX 4070 Ti Master .JPG" alt="Motherboards">
+      <p>GPU</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Corsair Vengeance RGB Pro DDR4_DDR5 .WEBP" alt="Memory">
+      <p>RAM</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Seagate FireCuda 530 .JPG" alt="Storage">
+      <p>SSD</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/microsoft sculpt ergonomic mouse.webp" alt="Power Supply">
+      <p>Mouse</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Steelseries Arena 9 Immersive 5.1 Gaming Speaker System With Reactive Illumination.png" alt="PC Cases">
+      <p>Speaker</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Asus ROG Pelta Wireless Gaming Headset.WEBP" alt="Cooling">
+      <p>Headset</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/msi mpg321urx mpg qd oled flat gaming monitor.webp" alt="Monitors">
+      <p>Monitor</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Leopold FC750R.WEBP" alt="Accessories">
+      <p>Keyboard</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/ASUS ROG Strix Gaming Tower Desktop.jpeg" alt="Accessories">
+      <p>System Unit</p>
+    </div>
+
+  </div>
+</section>
+
+    <script>
+      // When a category item is clicked, go to products.html with ?category=Name
+      document.querySelectorAll(".category-item").forEach(item => {
+        item.addEventListener("click", () => {
+          // Get the category name from the <p> tag inside
+          const categoryName = item.querySelector("p").textContent.trim();
+          // Redirect with category name in URL
+          window.location.href = `allproducts.html?category=${encodeURIComponent(categoryName)}`;
+        });
+      });
+    </script>
+
+
+  <section id="bentahan">
+    <div class="product-container">
+       <section class="shop-section">
+        <!-- ===== SULIT DEALS ===== -->
+        <div class="section-header">
+          <h2>SULIT DEALS</h2>
+          <a href="allproducts.html">SEE MORE</a>
+        </div>
+
+        <div class="product-container">
+          <!-- CARD 1 -->
+          <div class="shop-card">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/dell ultrasharp 4k monitor.png" alt="Product Image" class="front-img">
+            <img src="imago/dell ultrasharp 4k monitor_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Dell ultrasharp 4k monitor</h3>
+            <p class="price">₱64,139.84</p>
+            <button class="buy-btn">BUY NOW</button>          
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="shop-card">
+            <div class="brand">Headset</div>
+            <div class="image-wrapper">
+            <img src="imago/Redragon SKULD PRO H878 Lightweight Gaming Headset.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Redragon SKULD PRO H878 Lightweight Gaming Headset.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>ARedragon SKULD PRO H878 Lightweight</h3>
+            <p class="price">₱2,600.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="shop-card">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/logitech z407 bluetooth computer speakers.webp" alt="Product Image" class="front-img">
+            <img src="imago/logitech z407 bluetooth computer speakers.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Logitech Z407 Bluetooth Computer Speakers</h3>
+            <p class="price">₱4,676.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="shop-card">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/Razer DeathAdder Essential.webp" alt="Product Image" class="front-img">
+            <img src="imago/Razer DeathAdder Essentia.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Razer DeathAdder Essential mouse</h3>
+            <p class="price">₱1,097.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+
+        <!-- ===== NEW ARRIVALS ===== -->
+        <div class="section-header">
+          <h2>NEW ARRIVALS</h2>
+          <a href="allproducts.html">SEE MORE</a>
+        </div>
+
+        <div class="product-container">
+          <!-- CARD 1 -->
+          <div class="shop-card">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/msi mpg321urx mpg qd oled flat gaming monitor.webp" alt="Product Image" class="front-img">
+            <img src="imago/msi mpg321urx mpg wd oled flat gaming monitor.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>MSI mpg321urx Oled Flat Gaming Monitor</h3>
+            <p class="price">₱59,395.84</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="shop-card">
+            <div class="brand">Headset</div>
+            <div class="image-wrapper">
+            <img src="imago/Astro A50 Wireless Gaming Headset.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Astro A50 Wireless Gaming Headset_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Astro A50 Wireless Gaming Headset</h3>
+            <p class="price">₱21,811.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="shop-card">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/razer nommo v2 gaming speakers (1)_non.png" alt="Product Image" class="front-img">
+            <img src="imago/razer nommo v2 gaming speakers (1).png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Razer Nommo V2 Gaming Speakers</h3>
+            <p class="price">₱16,620.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="shop-card">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/Logitech MX Master 3s.webp" alt="Product Image" class="front-img">
+            <img src="imago/Logitech MX Master 3s.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Logitech MX Master 3s</h3>
+            <p class="price">₱5,690.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+</section>
+
+<!-- ===== TOP SELLERS ===== -->
+  <section class="shop-section">
+    <div class="section-header">
+      <h2>TOP SELLERS</h2>
+      <a href="allproducts.html">SEE MORE</a>
+    </div>
+
+    <div class="product-container">
+      <div class="shop-card">
+      <div class="brand">PowerColor</div>
+            <div class="image-wrapper">
+        <img src="imago/PowerColor Red Devil RX 7800 XT .JPG" alt="Product Image" class="front-img">
+            <img src="imago/PowerColor Red Devil RX 7800 XT_edited.JPG.png" alt="Graphics Cards" class="back-img">
+            </div>
+        <h3>PowerColor Red Devil RX 7800 XT</h3>
+        <p class="price">₱37,000.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+      <div class="shop-card">
+        <div class="brand">AMD</div>
+            <div class="image-wrapper">
+        <img src="imago/AMD Ryzen 7 7800X3D .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/AMD Ryzen 7 edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+        <h3>AMD Ryzen 7 7000 Series Processor</h3>
+        <p class="price">₱3,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+      <div class="shop-card">
+        <div class="brand">BIOSTAR</div>
+            <div class="image-wrapper">
+        <img src="imago/ASUS ROG Strix Z790-E Gaming WiFi  .JPG" alt="Product Image" class="front-img">
+            <img src="imago/ASUS ROG Strix Z790-E Gaming WiFi  .png" alt="Graphics Cards" class="back-img">
+            </div>
+        <h3>ASUS ROG Strix Z790-E Gaming WiFi</h3>
+        <p class="price">₱9,300.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+      <div class="shop-card">
+        <div class="brand">ASROCK</div>
+            <div class="image-wrapper">
+        <img src="imago/lg ultragear gaming lg 4k uhd 240hz gaming monitor.webp" alt="Product Image" class="front-img">
+            <img src="imago/lg ultragear gaming lg 4k uhd 240hz gaming monitor_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+        <h3>LG Ultragear Gaming LG 4K UHD 240Hz Monitor</h3>
+        <p class="price">₱69,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+    </div>
+  </section>
+
+  <section id="proslider-container">
+    <!-- From Uiverse.io by ashwin_5681 -->
+  <div
+  class="slider"
+  style="--width: 200px;
+    --height: 250px;
+    --quantity: 9;"
+>
+  <div class="list">
+
+        <!-- CARD 1 -->
+        <div class="item" style="--position: 1">
+          <div class="card">
+            <img src="##" alt="SSD Drive" />
+            <img src="imago/dell ultrasharp 4k monitor.png" alt="SSD Drive" />
+            <h3>MSI RTX 3060 GPU</h3>
+            <p>₱16,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="item" style="--position: 2">
+          <div class="card">
+            <img src="imago/ASUS TUF Gaming B550-Plus  _.JPG" alt="SSD Drive" />
+            <h3>AMD Ryzen 5 5600G</h3>
+            <p>₱5,295.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="item" style="--position: 3">
+          <div class="card">
+            <img src="imago/Gigabyte AORUS X570 Master   .JPG" alt="SSD Drive" />
+            <h3>Colorful RTX 3060</h3>
+            <p>₱17,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="item" style="--position: 4">
+          <div class="card">
+            <img src="imago/ASUS ROG Strix GeForce RTX 4090 .JPG" alt="SSD Drive" />
+            <h3>ASUS Dual RTX 4090</h3>
+            <p>₱19,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="item" style="--position: 5">
+          <div class="card">
+            <img src="imago/JBL Quantum 100.WEBP" alt="SSD Drive" />
+            <h3>Team Elite 16GB DDR4</h3>
+            <p>₱1,295.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="item" style="--position: 6">
+          <div class="card">
+            <img src="imago/TeamGroup T-Force Delta RGB DDR5 .JPG" alt="SSD Drive" />
+            <h3>ZOTAC RTX 3060 Twin Edge</h3>
+            <p>₱18,750.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="item" style="--position: 7">
+          <div class="card">
+            <img src="imago/A4tech HS‑7.JPG" alt="SSD Drive" />
+            <h3>CoolerMaster 750W PSU</h3>
+            <p>₱6,399.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="item" style="--position: 8">
+          <div class="card">
+            <img src="imago/G.Skill Trident Z5 RGB DDR5 .WEBP" alt="SSD Drive" />
+            <h3>MSI B550M-A PRO</h3>
+            <p>₱9,300.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="item" style="--position: 9">
+          <div class="card">
+            <img src="imago/Kingston Fury Beast DDR5 .WEBP" alt="SSD Drive" />
+            <h3>ADATA 512GB SSD</h3>
+            <p>₱2,195.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+        <div class="item" style="--position: 10">
+          <div class="card">
+            <img src="imago/harman kardon soundsticks 4.webp" alt="SSD Drive" />
+            <h3>Soundsticks 4</h3>
+            <p>₱2,195.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="payment_method">
+    <div class="payments">
+      <img src="imago/cash-on-delivery.png" alt="Cash on Delivery" />
+      <img src="imago/visa.png" alt="VISA" />
+      <img src="imago/24-hours.png" alt="7-Eleven" />
+      <img src="imago/paypal.png" alt="paypal" />
+      <img src="imago/GCash-Logo-500x281.png" alt="paypal" />
+      <img src="imago/paymaya logo.png" alt="paypal" />
+      <img src="imago/bdologo.png" alt="paypal" />
+      <img src="imago/bancnet-logo-png_seeklogo-15974.png" alt="paypal" />
+
+    </div>
+  </section>
+
+
+<div id="page-overlay" class="page-overlay"></div>
+
+<div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <span id="cart-close-btn" class="close-btn">&times;</span>
+    </div>
+
+    <ul id="cart-items-list">
+        </ul>
+
+    <div class="cart-footer">
+        <div id="cart-total">
+            <strong>Total: ₱0.00</strong>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+</div>
+
+<div id="checkout-modal" class="cart-modal"> <div class="cart-modal-content">
+        <span id="checkout-close-btn" class="close-btn">&times;</span>
+        <h2>Checkout Details</h2>
+        
+        <form id="checkout-form" class="checkout-form">
+            <h3>Shipping Address</h3>
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" required>
+            
+            <label for="address">Address (House No., Street, Brgy)</label>
+            <input type="text" id="address" required>
+
+            <label for="city">City / Municipality</label>
+            <input type="text" id="city" required>
+
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" required>
+
+            <h3>Payment Method</h3>
+            <div class="payment-options">
+                <label><input type="radio" name="payment" value="cod" checked> Cash on Delivery (COD)</label>
+                <label><input type="radio" name="payment" value="gcash"> GCash</label>
+                <label><input type="radio" name="payment" value="maya"> PayMaya</label>
+            </div>
+            
+            <button type="submit" class="checkout-btn">Place Order</button>
+        </form>
+    </div>
+</div>
+
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <section class="about-techypc">
+      <h2>TechyPC: Your Smart Choice for Tech and Innovation</h2>
+
+      <div class="about-text" id="aboutText">
+        <p>
+          At TechyPC, we believe technology should be smart, simple, and accessible to everyone. That’s why we’re committed to bringing you top-quality computer components, peripherals, and gadgets that make your digital life easier and more powerful. Whether you’re a gamer, creator, or everyday user, TechyPC helps you build the perfect setup to match your needs and lifestyle.
+        </p>
+
+        <p>
+          Our mission is to make PC shopping fast, affordable, and enjoyable. With an ever-expanding range of motherboards, processors, RAM, SSDs, graphics cards, and accessories, TechyPC provides everything you need to create or upgrade your dream machine — without the stress and confusion of traditional tech buying.
+        </p>
+
+        <p>
+          TechyPC also offers <strong>SmartBuild</strong> — an intelligent PC building tool designed to make compatibility easy. Pick your components, and SmartBuild ensures they all work together flawlessly. Whether you’re building for gaming, editing, or productivity, TechyPC guarantees performance without compromise.
+        </p>
+
+        <p>
+          For customers who prefer quick solutions, we also offer a wide range of <strong>ready-to-use prebuilt desktops</strong>. Each prebuild is professionally assembled, tested, and optimized for maximum efficiency — so you can focus on what matters most: creating, playing, and achieving.
+        </p>
+
+        <p>
+          <strong>Fast and Reliable Delivery</strong><br>
+          Get your items delivered straight to your doorstep with our trusted logistics partners. We prioritize secure packaging, accurate order tracking, and prompt delivery nationwide.
+        </p>
+
+        <p>
+          <strong>Safe and Flexible Payments</strong><br>
+          TechyPC ensures safe transactions through multiple payment options — from digital wallets to bank transfers and COD. Shop confidently knowing your data and privacy are fully protected.
+        </p>
+
+        <p>
+          <strong>Customer Care That Listens</strong><br>
+          We’re more than just a store — we’re a team that listens. Our support specialists are always ready to assist with inquiries, warranty requests, or build advice to make sure your experience is 100% satisfying.
+        </p>
+
+        <p>
+          <strong>Exclusive Deals and Rewards</strong><br>
+          Enjoy limited-time offers, bundle discounts, and loyalty perks when you shop at TechyPC. We love giving back to our community of tech enthusiasts who trust us to power their setups.
+        </p>
+
+        <p>
+          <strong>Join the TechyPC Community</strong><br>
+          Be part of an active online space where tech lovers share builds, tips, and product insights. Follow TechyPC on social media for the latest launches, reviews, and trends in the tech world.
+        </p>
+      </div>
+
+      <button class="toggle-btn" id="toggleBtn">SHOW MORE</button>
+    </section>
+
+    <section id="foota">
+      <div class="footer-bottom">
+        <div class="footer-column">
+          <h4>CUSTOMER SERVICE</h4>
+          <ul>
+            <li>Cancellation Policy</li>
+            <li>Delivery</li>
+            <li>Order And Payments</li>
+            <li>Payment FAQs</li>
+            <li>Billease FAQ</li>
+            <li>Privacy Policy</li>
+            <li>Return And Refunds</li>
+            <li>Service Area Directory</li>
+            <li>Terms And Conditions</li>
+            <li>Warranty Information</li>
+            <li>Warranty Policy</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <ul>
+            <li>Careers</li>
+            <li>Contact Us</li>
+            <li>FAQs</li>
+            <li>News And Articles</li>
+            <li>Our Company</li>
+            <li>Reviews</li>
+            <li>Store Locations</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LINKS</h4>
+          <ul>
+            <li>TechyPC Corporate</li>
+            <li>TechyPC Community</li>
+            <li>Lazada Officual store</li>
+            <li>Shopee Officual store</li>
+          </ul>
+        </div>
+
+        <div class="footer-column social">
+          <img src="imago/weblogomodeRbgN.png" alt="EasyPC Logo" class="footer-logo" />
+          <p>Follow us:</p>
+          <div class="social-icons">
+            <a href="#"><img src="imago/facebook.png" alt=""></a>
+            <a href="#"><img src="imago/twitter.png" alt=""></a>
+            <a href="#"><img src="imago/instagram.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+</body>
+
+<script>
+  //for moving slide
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.querySelectorAll(".slide");
+  let dots = document.querySelectorAll(".dot");
+  
+  slides.forEach(slide => slide.style.display = "none");
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex-1].style.display = "block";
+  
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[slideIndex-1].classList.add("active");
+  
+  setTimeout(showSlides, 3000); // change every 3 seconds
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+
+  // ------this are for nav and moving
+  window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
+  const promoBar = document.querySelector(".promo-bar");
+  const hero = document.querySelector(".hero");
+
+  // Get hero section height
+  const heroHeight = hero.offsetHeight;
+
+  // Check scroll position
+  if (window.scrollY > heroHeight - 80) {
+    header.classList.add("scrolled");
+    promoBar.classList.add("visible");
+  } else {
+    header.classList.remove("scrolled");
+    promoBar.classList.remove("visible");
+  }
+});
+
+
+
+//for the text show more and show less
+const aboutText = document.getElementById("aboutText");
+const toggleBtn = document.getElementById("toggleBtn");
+
+toggleBtn.addEventListener("click", () => {
+  aboutText.classList.toggle("expanded");
+
+  if (aboutText.classList.contains("expanded")) {
+    toggleBtn.textContent = "SHOW LESS";
+  } else {
+    toggleBtn.textContent = "SHOW MORE";
+  }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. STATE ---
+    let cart = [];
+
+    // --- 2. GET ALL ELEMENTS ---
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    
+    // Cart Sidebar elements
+    const cartIcon = document.getElementById('cart-icon');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartCloseBtn = document.getElementById('cart-close-btn');
+    const cartItemsList = document.getElementById('cart-items-list');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCounter = document.getElementById('cart-counter');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    
+    // Overlay element
+    const pageOverlay = document.getElementById('page-overlay');
+
+    // Checkout Modal elements
+    const checkoutModal = document.getElementById('checkout-modal');
+    const checkoutCloseBtn = document.getElementById('checkout-close-btn');
+    const checkoutForm = document.getElementById('checkout-form');
+    
+
+    // --- 3. EVENT LISTENERS ---
+    
+    // Listen for clicks on ALL "BUY NOW" buttons
+    buyButtons.forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+
+    // Listen for clicks on the cart items list (for +/-, remove)
+    cartItemsList.addEventListener('click', handleCartAction);
+
+    // Open/Close Cart Sidebar
+    cartIcon.addEventListener('click', showCartSidebar);
+    cartCloseBtn.addEventListener('click', hideCartSidebar);
+    pageOverlay.addEventListener('click', hideCartSidebar); // Close cart if overlay is clicked
+
+    // Open/Close Checkout Modal
+    checkoutBtn.addEventListener('click', openCheckout);
+    checkoutCloseBtn.addEventListener('click', closeCheckout);
+    
+    // Handle the final "Place Order"
+    checkoutForm.addEventListener('submit', placeOrder);
+
+
+    // --- 4. FUNCTIONS ---
+
+    /**
+     * Called when a "BUY NOW" button is clicked.
+     */
+    function addToCart(event) {
+        const productElement = event.target.closest('.shop-card, .card');
+        if (!productElement) return;
+
+        // Get product details
+        const productName = productElement.querySelector('h3').textContent;
+        const priceElement = productElement.querySelector('p.price') || productElement.querySelector('p');
+        const priceString = priceElement.textContent;
+        const productPrice = parseFloat(priceString.replace('₱', '').replace(/,/g, ''));
+        const productId = productName; // Using name as unique ID
+
+        // Get product image
+        // Tries to find the '.front-img' or just any 'img'
+        const imgElement = productElement.querySelector('.front-img') || productElement.querySelector('img');
+        const productImg = imgElement ? imgElement.src : ''; // Get the image source
+        
+        let existingItem = cart.find(item => item.id === productId);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                image: productImg, // NEW: Store image
+                quantity: 1
+            });
+        }
+        
+        updateCartDisplay();
+        showCartSidebar(); // NEW: Open sidebar on add
+    }
+
+    /**
+     * Handles clicks INSIDE the cart list (for +, -, and remove)
+     */
+    function handleCartAction(event) {
+        const target = event.target;
+        if (!target.classList.contains('qty-btn') && !target.classList.contains('remove-btn')) {
+            return; // Click wasn't on a button we care about
+        }
+
+        const id = target.dataset.id;
+        const action = target.dataset.action;
+
+        if (action === 'plus') {
+            let item = cart.find(i => i.id === id);
+            if (item) item.quantity++;
+        }
+        else if (action === 'minus') {
+            let itemIndex = cart.findIndex(i => i.id === id);
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity--;
+                // If quantity drops to 0, remove item
+                if (cart[itemIndex].quantity === 0) {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+        }
+        else if (action === 'remove') {
+            let itemIndex = cart.findIndex(i => i.id === id);
+            if (itemIndex > -1) {
+                cart.splice(itemIndex, 1);
+            }
+        }
+        
+        updateCartDisplay(); // Refresh the cart
+    }
+
+    /**
+     * Updates the cart counter, sidebar list, and total.
+     */
+    function updateCartDisplay() {
+        cartItemsList.innerHTML = ''; // Clear the list first
+        let totalItems = 0;
+        let totalPesoAmount = 0;
+
+        if (cart.length === 0) {
+            cartItemsList.innerHTML = '<li style="text-align: center; color: #888;">Your cart is empty.</li>';
+        } else {
+            cart.forEach(item => {
+                // Create the list item
+                const li = document.createElement('li');
+                
+                // This HTML structure matches our CSS
+                li.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="item-image">
+                    <div class="item-details">
+                        <span class="item-name">${item.name}</span>
+                        <span class="item-price">₱${(item.price * item.quantity).toFixed(2)}</span>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" data-id="${item.id}" data-action="minus">-</button>
+                            <span class="qty-display">${item.quantity}</span>
+                            <button class="qty-btn plus" data-id="${item.id}" data-action="plus">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-btn" data-id="${item.id}" data-action="remove">🗑️</button>
+                `;
+                
+                cartItemsList.appendChild(li);
+
+                // Add to totals
+                totalItems += item.quantity;
+                totalPesoAmount += item.price * item.quantity;
+            });
+        }
+
+        // Update counter on the icon
+        if (totalItems > 0) {
+            cartCounter.textContent = totalItems;
+            cartCounter.style.display = 'block';
+        } else {
+            cartCounter.style.display = 'none';
+        }
+
+        // Update total in the footer
+        cartTotal.innerHTML = `<strong>Total: ₱${totalPesoAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong>`;
+        
+        // Disable checkout button if cart is empty
+        checkoutBtn.disabled = cart.length === 0;
+    }
+
+    /**
+     * Shows the cart sidebar and overlay.
+     */
+    function showCartSidebar(event) {
+        if(event) event.preventDefault(); // Stop <a> link behavior
+        pageOverlay.classList.add('show');
+        cartSidebar.classList.add('show');
+    }
+
+    /**
+     * Hides the cart sidebar and overlay.
+     */
+    function hideCartSidebar() {
+        pageOverlay.classList.remove('show');
+        cartSidebar.classList.remove('show');
+    }
+    
+    /**
+     * Hides cart and shows checkout modal.
+     */
+    function openCheckout() {
+        if (cart.length === 0) return; // Don't open if cart is empty
+        hideCartSidebar();
+        checkoutModal.classList.add('show');
+    }
+
+    /**
+     * Hides checkout modal.
+     */
+    function closeCheckout() {
+        checkoutModal.classList.remove('show');
+    }
+
+    /**
+     * Handles the final order submission.
+     */
+    function placeOrder(event) {
+        event.preventDefault(); // Stop form from reloading the page
+        
+        // 1. Get Buyer Details
+        const buyerDetails = {
+            name: document.getElementById('full-name').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            phone: document.getElementById('phone').value,
+            payment: document.querySelector('input[name="payment"]:checked').value
+        };
+        
+        // 2. Get Cart Details
+        const orderSummary = cart.map(item => {
+            return `${item.name} (x${item.quantity}) - ₱${(item.price * item.quantity).toFixed(2)}`;
+        });
+        
+        // 3. Get Total
+        const totalAmount = cartTotal.textContent;
+
+        // **This is where you would send data to a server.**
+        // For this demo, we'll just show an alert and log to console.
+        
+        console.log("--- NEW ORDER ---");
+        console.log("Buyer:", buyerDetails);
+        console.log("Items:", orderSummary);
+        console.log("Total:", totalAmount);
+        
+        alert(`Order Placed Successfully!
+        
+Thank you, ${buyerDetails.name}!
+Your order will be shipped to: ${buyerDetails.address}, ${buyerDetails.city}
+Total: ${totalAmount}`);
+
+        // 4. Clean up
+        closeCheckout();
+        cart = []; // Empty the cart
+        updateCartDisplay(); // Update the UI to show an empty cart
+        checkoutForm.reset(); // Reset the form fields
+    }
+    
+    // Initial call to set up the cart display when the page loads
+    updateCartDisplay();
+});
+</script>
+
+
+</html>

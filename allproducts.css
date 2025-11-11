@@ -1,0 +1,722 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+body {
+  background-color: whitesmoke;
+  color: #fff;
+}
+
+  /* ------------- Header / Navbar (with search bar) ------------- */
+header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width:100%;
+  z-index: 999;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #0d1b2a, #1b263b);
+  box-shadow: 0px 0 80px black;
+  backdrop-filter: blur(50px);
+  padding-top: 3.5px;
+  top: 0;
+
+}
+
+
+/* Logo */
+.logo {
+  color: #ffffff;
+  padding: 0 40px;
+  position: fixed;
+}
+
+.logo img{
+  width: 200px;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 3px 8px;
+  width: 100%;
+  max-width: 500px; /* Set fixed max width */
+  margin-left: 300px; /* Centers it */
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  width: 100%;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.search-bar button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Navbar links */
+#navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px ;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  margin: 8px 10px;
+  
+}
+
+#navbar a {
+  color: #ffffff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 550;
+  position: relative;
+  padding: 10px 10px;
+  
+}
+
+#navbar a:hover{
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  transition: 0.3s;
+  transform: scale(1.1);
+
+}
+
+
+/* CTA button */
+#navbar .cta {
+  color: #000000;
+  font-weight: 600;
+  transition: 0.3s;
+  position: relative;
+  justify-content: center;
+}
+
+#navbar .cta img{
+  width: 40px;
+  height: 35px;
+
+}
+
+
+
+
+
+/*CATEGORIES----------------------------------------------------------------------------------*/
+
+.h2cat {
+  color: black;
+  margin: 70px 100px 10px;
+}
+
+.categories {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-grid {
+  border-radius: 5px;
+  margin: 0 100px;
+  box-shadow: 0 0 5px black;
+  padding: 15px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.category-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #f5f5f5;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-item p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.category-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.category-item:hover p {
+  color: #0066ff;
+}
+
+
+/*try bentahan products*/-------------------------------------------------------------------------------------------
+/* From Uiverse.io by TimTrayler */ 
+#bentahan {
+  height: 90vh;
+  position: relative;
+}
+
+.section-header a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 25px;
+}
+
+.section-header h2{
+  bottom: 5px;
+  color: black;
+  margin: 40px 0 10px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.shop-card {
+  cursor: pointer;
+  background: #fff;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative;
+  transition: transform 0.3s ease;
+  transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
+               transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.shop-card:hover {
+   border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  transform: scale(1.05);
+}
+
+.shop-card img {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* wrapper that holds both images */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 150px;            /* match the height you use for .shop-card img */
+  overflow: hidden;
+  display: block;
+  border-radius: 6px;
+  background: #fff;         /* optional: shows while images load */
+}
+
+/* both images fill the wrapper */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* or 'cover' if you want zoom/crop */
+  display: block;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* default (front) visible */
+.front-img {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* hover image stacked exactly over front image, initially hidden */
+.back-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* swap on hover of card (or hover of wrapper if you prefer) */
+.shop-card:hover .front-img {
+  opacity: 0;
+  transform: scale(1.02);  /* subtle zoom (optional) */
+}
+
+.shop-card:hover .back-img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.shop-card h3 {
+  font-size: 0.95rem;
+  color: #000000;
+  margin: 10px 0 5px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.shop-card .price {
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.shop-card button {
+  width: 100%;
+  background-color: #2e2e2e;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.shop-card button:hover {
+  background-color: #444;
+}
+
+
+.shop-card .brand {
+  background-color: transparent;
+  color: #555;
+  top: 5px;
+  left: 10px;
+  font-weight: 600;
+}
+
+
+/* -------- Footer ---------------------------------------------------------------------------- */
+.footer {
+  background: #1e1e1e;
+  color: #ccc;
+  width: 100%;
+}
+
+.footer-top p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-top .show-more {
+  color: #ffb400;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.social {
+  text-align: center;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 5px 0 0 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-icons a img{
+  width: 30px;
+}
+
+.social-icons a:hover {
+  color: #ffb400;
+}
+
+/*about to us-------------------------------------------------------------------------------------------*/
+.about-techypc {
+  background: #f8f9fa;
+  width: 100%;
+  padding: 40px 100px;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+.about-techypc h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.about-text {
+  max-height: 220px;
+  overflow: hidden;
+  transition: max-height 0.8s ease;
+}
+
+.about-text.expanded {
+  max-height: 5000px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #00b4d8;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #0096c7;
+}
+
+/* cart
+
+/* --- NEW CART & CHECKOUT STYLES --- */
+
+/* --- FINAL CART & CHECKOUT STYLES --- */
+
+/* Page Overlay (for dimming) */
+.page-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+}
+.page-overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 360px; /* Width of the sidebar */
+    height: 100vh;
+    background: #fefefe;
+    color: #333;
+    z-index: 1002;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    
+    /* Hide off-screen to the right */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    
+    display: flex;
+    flex-direction: column;
+}
+.cart-sidebar.show {
+    /* Slide in */
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+.cart-header h3 {
+    margin: 0;
+}
+.close-btn {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+.close-btn:hover {
+    color: #000;
+}
+
+/* Cart Item List */
+#cart-items-list {
+    list-style: none;
+    padding: 10px;
+    flex-grow: 1; /* This makes the list take up all available space */
+    overflow-y: auto; /* Adds scrolling if items overflow */
+    margin: 0;
+}
+
+#cart-items-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+#cart-items-list .item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+#cart-items-list .item-details {
+    flex-grow: 1;
+}
+#cart-items-list .item-name {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+#cart-items-list .item-price {
+    display: block;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.qty-btn {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #555;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.qty-display {
+    padding: 0 10px;
+    font-size: 0.9rem;
+}
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #aaa;
+    padding: 5px;
+}
+.remove-btn:hover {
+    color: red;
+}
+
+/* Cart Footer */
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
+}
+#cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 15px;
+}
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Checkout Modal */
+.cart-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1002; /* Above overlay */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.cart-modal.show {
+    display: block;
+}
+.cart-modal-content {
+    background-color: #fefefe;
+    color: #333;
+    margin: 10% auto; /* Centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Checkout Form */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.checkout-form h3 {
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.checkout-form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Payment Image Display */
+.payment-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    min-height: 80px; /* Keeps a set height */
+    background: #f9f9f9;
+}
+
+#payment-image {
+    max-width: 150px;
+    max-height: 60px;
+    object-fit: contain;
+    /* This adds a smooth fade when the image changes */
+    transition: opacity 0.2s ease-in-out; 
+}
+
+/* Payment Radio Button Options */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Tighter gap */
+}
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between radio button and text */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid transparent; 
+    font-weight: normal; /* Override the default form label weight */
+}
+.payment-options label:hover {
+    background-color: #f4f4f4;
+}
+
+/* This is a CSS trick: style the label *after* its checked input */
+.payment-options input[type="radio"]:checked + label {
+    background-color: #e6f7ff; 
+    border-color: #b3e0ff;
+    font-weight: bold;
+}

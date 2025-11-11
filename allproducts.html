@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+  <title>TechyPC</title>
+  <link rel="stylesheet" href="allproducts.css">
+  <link rel="icon" href="imago/weblogocoloredbg.png">
+</head>
+<body>
+  
+
+  
+  <div class="promo-bar">
+    <div class="scrolling-text">
+      🎉 Free Shipping for orders ₱3,000+ | 💻 New arrivals every week! | 🕹️ Build your dream PC today!
+    </div>
+  </div>
+
+ <!-- HEADER / NAV -->
+  <header>
+    <div class="logo"><img src="imago/weblogowhite.png" alt=""></div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search products..." />
+      <button><i class="fa fa-search"></i></button>
+    </div>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const searchValue = params.get("search")?.toLowerCase() || "";
+
+    const searchInput = document.querySelector(".search-bar input");
+    if (searchInput) searchInput.value = searchValue; // show search term in bar
+
+    const shopCards = document.querySelectorAll(".shop-card");
+
+    function filterProducts() {
+      const value = searchInput.value.toLowerCase().trim();
+      shopCards.forEach(card => {
+        const name = card.querySelector("h3").textContent.toLowerCase();
+        const brand = card.querySelector(".brand").textContent.toLowerCase();
+        card.style.display = (name.includes(value) || brand.includes(value)) ? "block" : "none";
+      });
+    }
+
+    // Run filter once if there's a search term from homepage
+    if (searchValue) filterProducts();
+
+    // Allow filtering again when user types
+    searchInput.addEventListener("input", filterProducts);
+  });
+</script>
+
+    <nav id="navbar">
+      <a href="Homepage.html">Home</a>
+      <a href="allproducts.html">Products</a>
+      <a href="#foota">About</a>
+      <a href="#foota">Contact</a>
+<a href="#" class="cta" id="cart-icon">
+    <img class="cta-cart" src="imago/online-store.png" alt="Cart">
+    <span id="cart-counter">0</span>
+</a>
+    </nav>
+    
+  </header>
+
+    <section id="categories">
+  <h2 class="h2cat">CATEGORIES</h2>
+  <div class="category-grid">
+
+    <div class="category-item">
+      <img src="imago/Gigabyte AORUS X570 Master   .JPG" alt="Graphics Cards">
+      <p>Motherboard</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Intel Core i5-14600K .WEBP" alt="Processors">
+      <p>CPU</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Gigabyte AORUS GeForce RTX 4070 Ti Master .JPG" alt="Motherboards">
+      <p>GPU</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Corsair Vengeance RGB Pro DDR4_DDR5 .WEBP" alt="Memory">
+      <p>RAM</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Seagate FireCuda 530 .JPG" alt="Storage">
+      <p>SSD</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/microsoft sculpt ergonomic mouse.webp" alt="Power Supply">
+      <p>Mouse</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Steelseries Arena 9 Immersive 5.1 Gaming Speaker System With Reactive Illumination.png" alt="PC Cases">
+      <p>Speaker</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Asus ROG Pelta Wireless Gaming Headset.WEBP" alt="Cooling">
+      <p>Headset</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/msi mpg321urx mpg qd oled flat gaming monitor.webp" alt="Monitors">
+      <p>Monitor</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/Leopold FC750R.WEBP" alt="Accessories">
+      <p>Keyboard</p>
+    </div>
+
+    <div class="category-item">
+      <img src="imago/ASUS ROG Strix Gaming Tower Desktop.jpeg" alt="Accessories">
+      <p>System Unit</p>
+    </div>
+
+  </div>
+</section>
+
+    <script>
+      // When a category item is clicked, go to products.html with ?category=Name
+      document.querySelectorAll(".category-item").forEach(item => {
+        item.addEventListener("click", () => {
+          // Get the category name from the <p> tag inside
+          const categoryName = item.querySelector("p").textContent.trim();
+          // Redirect with category name in URL
+          window.location.href = `allproducts.html?category=${encodeURIComponent(categoryName)}`;
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const params = new URLSearchParams(window.location.search);
+        const searchValue = params.get("search")?.toLowerCase() || "";
+        const categoryValue = params.get("category")?.toLowerCase() || "";
+
+        const searchInput = document.querySelector(".search-bar input");
+        const shopCards = document.querySelectorAll(".shop-card");
+
+        // Set the search bar value if a category or search was passed
+        if (searchInput) searchInput.value = searchValue || categoryValue;
+
+        function filterProducts() {
+          const value = searchInput.value.toLowerCase().trim();
+
+          let found = false;
+          shopCards.forEach(card => {
+            const name = card.querySelector("h3").textContent.toLowerCase();
+            const brand = card.querySelector(".brand").textContent.toLowerCase();
+            const category = card.getAttribute("data-category")?.toLowerCase() || "";
+
+            if (name.includes(value) || brand.includes(value) || category.includes(value)) {
+              card.style.display = "block";
+              found = true;
+            } else {
+              card.style.display = "none";
+            }
+          });
+
+          // Optional: show "No products found"
+          const noResult = document.getElementById("no-results");
+          if (noResult) noResult.style.display = found ? "none" : "block";
+        }
+
+        // Run filter once if coming from homepage
+        if (searchValue || categoryValue) filterProducts();
+
+        // Live filtering as user types
+        if (searchInput) searchInput.addEventListener("input", filterProducts);
+      });
+    </script>
+
+  
+
+  <section id="bentahan">
+    <div class="product-container">
+       <section class="shop-section">
+        <!-- ===== ALL PRODUCTS ===== -->
+        <div class="section-header">
+          <h2>AVAILABLE PRODUCTS</h2>
+        </div>
+
+        <div class="product-container">
+          <!-- CARD 1 -->
+          <div class="shop-card" data-category="Speaker">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/logitech z407 bluetooth computer speakers.webp" alt="Product Image" class="front-img">
+            <img src="imago/logitech z407 bluetooth computer speakers.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>logitech z407 bluetooth computer speakers</h3>
+            <p class="price">₱4,676.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="shop-card" data-category="Mouse">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/Razer DeathAdder Essential.webp" alt="Product Image" class="front-img">
+            <img src="imago/Razer DeathAdder Essentia.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Razer DeathAdder <br> Essential mouse</h3>
+            <p class="price">₱1,097.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          
+          <!-- CARD 3 -->
+          <div class="shop-card" data-category="GPU">
+            <div class="brand">GPU</div>
+            <div class="image-wrapper">
+            <img src="imago/ASUS ROG Strix GeForce RTX 4090 .JPG" alt="Product Image" class="front-img">
+            <img src="imago/ASUS ROG Strix GeForce RTX 4090_edited .JPG.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>ASUS ROG Strix GeForce RTX 4090</h3>
+            <p class="price">₱3,333.33</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="shop-card">
+            <div class="brand">Keyboard</div>
+            <div class="image-wrapper">
+            <img src="imago/Leopold FC750R.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Leopold FC750R_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Leopold FC750R Keyboard</h3>
+            <p class="price">₱5,425.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 5 -->
+          <div class="shop-card" >
+            <div class="brand">SSD</div>
+            <div class="image-wrapper">
+            <img src="imago/Crucial T700 _ Crucial P5 .JPG" alt="Product Image" class="front-img">
+            <img src="imago/Crucial T700 _ Crucial P5_edited .JPG" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Crucial T700 SSD</h3>
+            <p class="price">₱9,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 6 -->
+          <div class="shop-card" data-category="Monitor">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/lg ultragear gaming lg 4k uhd 240hz gaming monitor.webp" alt="Product Image" class="front-img">
+            <img src="imago/lg ultragear gaming lg 4k uhd 240hz gaming monitor_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>lg ultragear gaming lg 4k uhd 240hz monitor</h3>
+            <p class="price">₱69,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 7 -->
+          <div class="shop-card">
+            <div class="brand">Headset</div>
+            <div class="image-wrapper">
+            <img src="imago/Astro A50 Wireless Gaming Headset.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Astro A50 Wireless Gaming Headset_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Astro A50 Wireless Gaming Headset</h3>
+            <p class="price">₱21,811.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 8 -->
+          <div class="shop-card">
+            <div class="brand">CPU</div>
+            <div class="image-wrapper">
+            <img src="imago/Intel Core i9-14900K .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Intel core i9-14900K_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Intel core i9-14900K</h3>
+            <p class="price">₱31,450.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 9 -->
+          <div class="shop-card">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/razer nommo v2 gaming speakers (1)_non.png" alt="Product Image" class="front-img">
+            <img src="imago/razer nommo v2 gaming speakers (1).png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>razer nommo v2 gaming speakers</h3>
+            <p class="price">₱16,620.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 10 -->
+          <div class="shop-card">
+            <div class="brand">System Unit</div>
+            <div class="image-wrapper">
+            <img src="imago/HP OmniDesk AI Desktop Computer Intel Core Ultra 5 225 16GB RAM 512GB SSD in Dark Wood.webp" alt="Product Image" class="front-img">
+            <img src="imago/HP OmniDesk AI Desktop Computer Intel Core Ultra 5 225 16GB RAM 512GB SSD in Dark Wood.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>HP OmniDesk AI Desktop Computer Intel Core Ultra</h3>
+            <p class="price">₱73,613.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 11 -->
+          <div class="shop-card">
+            <div class="brand">SSD</div>
+            <div class="image-wrapper">
+            <img src="imago/WD Black SN850X .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/WD Black SN850X .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>WD Black SN850X</h3>
+            <p class="price">₱6,199.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 12 -->
+          <div class="shop-card" data-category="GPU">
+            <div class="brand">GPU</div>
+            <div class="image-wrapper">
+            <img src="imago/Gigabyte AORUS GeForce RTX 4070 Ti Master .JPG" alt="Product Image" class="front-img">
+            <img src="imago/Gigabyte AORUS GeForce RTX 4070 Ti Master_edited.JPG.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Gigabyte AORUS GeForce RTX 4070 Ti Master</h3>
+            <p class="price">₱57,995.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 13 -->
+          <div class="shop-card">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/dell s3222dgm.webp" alt="Product Image" class="front-img">
+            <img src="imago/dell s3222dgm.edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>dell s3222dgm</h3>
+            <p class="price">₱35,389.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 14 -->
+          <div class="shop-card">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/HyperX Pulsefire Haste Wireless.webp" alt="Product Image" class="front-img">
+            <img src="imago/HyperX Pulsefire Haste Wireless.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>HyperX Pulsefire Haste Wireless</h3>
+            <p class="price">₱3,299.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 15 -->
+          <div class="shop-card">
+            <div class="brand">CPU</div>
+            <div class="image-wrapper">
+            <img src="imago/AMD Ryzen 7 7800X3D .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/AMD Ryzen 7 edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>AMD Ryzen 7 7800X3D</h3>
+            <p class="price">₱27,897.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 16 -->
+          <div class="shop-card">
+            <div class="brand">System Unit</div>
+            <div class="image-wrapper">
+            <img src="imago/ASUS ROG Strix Gaming Tower Desktop.jpeg" alt="Product Image" class="front-img">
+            <img src="imago/ASUS ROG Strix Gaming Tower Desktop.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>ASUS ROG Strix Gaming Tower Desktop</h3>
+            <p class="price">₱167,778.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 17 -->
+          <div class="shop-card">
+            <div class="brand">Motherboard</div>
+            <div class="image-wrapper">
+            <img src="imago/ASUS TUF Gaming B550-Plus  _.JPG" alt="Product Image" class="front-img">
+            <img src="imago/ASUS TUF Gaming B550-Plus  .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>ASUS TUF Gaming B550-Plus</h3>
+            <p class="price">₱7,504.49</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 18 -->
+          <div class="shop-card">
+            <div class="brand">RAM</div>
+            <div class="image-wrapper">
+            <img src="imago/Corsair Vengeance RGB Pro DDR4_DDR5 .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Corsair Vengeance RGB Pro DDR4DDR5 .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Corsair Vengeance RGB Pro DDR4DDR5</h3>
+            <p class="price">₱7,795.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 19 -->
+          <div class="shop-card">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/harman kardon soundsticks 4.webp" alt="Product Image" class="front-img">
+            <img src="imago/harman kardon soundsticks 4.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>harman kardon soundsticks 4</h3>
+            <p class="price">₱71,287.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 20 -->
+          <div class="shop-card">
+            <div class="brand">Keyboard</div>
+            <div class="image-wrapper">
+            <img src="imago/Royal kludge.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Royal Kludge_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Royal Kludge</h3>
+            <p class="price">₱2,400.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 21 -->
+          <div class="shop-card">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/Baseus Wireless Mouse Dual‑Mode.jpg" alt="Product Image" class="front-img">
+            <img src="imago/Baseus Wireless Mouse Dual‑Mode.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Baseus Wireless Mouse Dual-Mode</h3>
+            <p class="price">₱1,799.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 22 -->
+          <div class="shop-card">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/asus rog swift oled pg27ucdm.jpeg" alt="Product Image" class="front-img">
+            <img src="imago/asus rog swift oled pg27ucdm_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>asus rog swift oled pg27ucdm</h3>
+            <p class="price">₱3,333.33</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 23 -->
+          <div class="shop-card">
+            <div class="brand">Headset</div>
+            <div class="image-wrapper">
+            <img src="imago/Redragon SKULD PRO H878 Lightweight Gaming Headset.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Redragon SKULD PRO H878 Lightweight Gaming Headset.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Redragon SKULD PRO H878 Lightweight Gaming Headset</h3>
+            <p class="price">₱2,600.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 24 -->
+          <div class="shop-card">
+            <div class="brand">CPU</div>
+            <div class="image-wrapper">
+            <img src="imago/AMD Ryzen 9 7950X3D .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/AMD Ryzen 9 7950X3D_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>AMD Ryzen 9 7950X3D</h3>
+            <p class="price">₱37,799.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 25 -->
+          <div class="shop-card">
+            <div class="brand">System Unit</div>
+            <div class="image-wrapper">
+            <img src="imago/Corsair vengeance.jpeg" alt="Product Image" class="front-img">
+            <img src="imago/Corsair Vengeance.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Corsair Vengeance</h3>
+            <p class="price">₱223,209.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 26 -->
+          <div class="shop-card">
+            <div class="brand">Motherboard</div>
+            <div class="image-wrapper">
+            <img src="imago/MSI MAG X870 Tomahawk WiFi   .PNG" alt="Product Image" class="front-img">
+            <img src="imago/MSI MAG X870 Tomahawk WiFi _EDITED.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>MSI MAG X870 Tomahawk WiFi</h3>
+            <p class="price">₱19,695.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 27 -->
+          <div class="shop-card">
+            <div class="brand">GPU</div>
+            <div class="image-wrapper">
+            <img src="imago/MSI GeForce RTX 4080 SUPRIM X .JPG" alt="Product Image" class="front-img">
+            <img src="imago/MSI GeForce RTX 4080 SUPRIM X_edited .JPG.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>MSI GeForce RTX 4080 SUPRIM X</h3>
+            <p class="price">₱83,950.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 28 -->
+          <div class="shop-card">
+            <div class="brand">Keyboard</div>
+            <div class="image-wrapper">
+            <img src="imago/Razer Huntsman mini.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Razer Huntsman mini_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Razer Huntsman mini</h3>
+            <p class="price">₱3,333.33</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 29 -->
+          <div class="shop-card">
+            <div class="brand">RAM</div>
+            <div class="image-wrapper">
+            <img src="imago/Crucial Ballistix DDR5 .JPG" alt="Product Image" class="front-img">
+            <img src="imago/Crucial Ballistix DDR5 .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Crucial Ballistix DDR5</h3>
+            <p class="price">₱7,495.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 30 -->
+          <div class="shop-card">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/Steelseries Arena 9 Immersive 5.1 Gaming Speaker System With Reactive Illumination.png" alt="Product Image" class="front-img">
+            <img src="imago/Steelseries Arena 9 Immersive 5.1 Gaming Speaker System With Reactive Illumination_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Steelseries Arena 9 Immersive Speaker</h3>
+            <p class="price">₱36,135.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 31 -->
+          <div class="shop-card">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/alienware curved gaming monitor.webp" alt="Product Image" class="front-img">
+            <img src="imago/alienware curved gaming monitor_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>alienware curved gaming monitor</h3>
+            <p class="price">₱70,206.07</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 32 --->
+          <div class="shop-card">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/Mad Catz R.A.T. PRO X3.jpg" alt="Product Image" class="front-img">
+            <img src="imago/Mad Catz R.A.T. PRO X3.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Mad Catz R.A.T. PRO X3</h3>
+            <p class="price">₱16,704.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 33 -->
+          <div class="shop-card">
+            <div class="brand">GPU</div>
+            <div class="image-wrapper">
+            <img src="imago/PowerColor Red Devil RX 7800 XT .JPG" alt="Product Image" class="front-img">
+            <img src="imago/PowerColor Red Devil RX 7800 XT_edited.JPG.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>PowerColor Red Devil RX 7800 XT</h3>
+            <p class="price">₱37,000.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 34 -->
+          <div class="shop-card">
+            <div class="brand">System Unit</div>
+            <div class="image-wrapper">
+            <img src="imago/lenovo ideacentre tower gen 9.jpeg" alt="Product Image" class="front-img">
+            <img src="imago/lenovo ideacentre tower gen 9.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>lenovo ideacentre tower gen 9</h3>
+            <p class="price">₱37,885.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 35 -->
+          <div class="shop-card">
+            <div class="brand">Headset</div>
+            <div class="image-wrapper">
+            <img src="imago/Logitech H111.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/logitech h111_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Logitech H111</h3>
+            <p class="price">₱429.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 36 -->
+          <div class="shop-card">
+            <div class="brand">SSD</div>
+            <div class="image-wrapper">
+            <img src="imago/Seagate FireCuda 530 .JPG" alt="Product Image" class="front-img">
+            <img src="imago/Seagate FireCuda 530 _edited.JPG" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Seagate FireCuda 530</h3>
+            <p class="price">₱4,879.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 37 -->
+          <div class="shop-card">
+            <div class="brand">RAM</div>
+            <div class="image-wrapper">
+            <img src="imago/G.Skill Trident Z5 RGB DDR5 .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/G.Skill Trident Z5 RGB DDR5 .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>G.Skill Trident Z5 RGB DDR5</h3>
+            <p class="price">₱6,450.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+ 
+          <!-- CARD 38 -->
+          <div class="shop-card">
+            <div class="brand">Keyboard</div>
+            <div class="image-wrapper">
+            <img src="imago/Aula F75.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Aula F75_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Aula F75</h3>
+            <p class="price">₱2,595.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 39 -->
+          <div class="shop-card">
+            <div class="brand">Speaker</div>
+            <div class="image-wrapper">
+            <img src="imago/creative pebble pro 2.0 bluetooth.png" alt="Product Image" class="front-img">
+            <img src="imago/creative_pebble 2.0.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>creative pebble pro 2.0 bluetooth</h3>
+            <p class="price">₱1,533.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 40 -->
+          <div class="shop-card">
+            <div class="brand">GPU</div>
+            <div class="image-wrapper">
+            <img src="imago/Sapphire Radeon RX 7900 XTX Nitro+ .JPG" alt="Product Image" class="front-img">
+            <img src="imago/Sapphire Radeon RX 7900 XTX Nitro+_edited .JPG.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Sapphire Radeon RX 7900 XTX Nitro+</h3>
+            <p class="price">₱65,550.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 41 -->
+          <div class="shop-card">
+            <div class="brand">Headset</div>
+            <div class="image-wrapper">
+            <img src="imago/Jabra Evolve2 65.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/jabra_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Jabra Evolve2 65</h3>
+            <p class="price">₱14,950.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 42 -->
+          <div class="shop-card">
+            <div class="brand">Motherboard</div>
+            <div class="image-wrapper">
+            <img src="imago/ASRock B550 Taichi   .JPG" alt="Product Image" class="front-img">
+            <img src="imago/ASRock B550 Taichi.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>ASRock B550 Taichi</h3>
+            <p class="price">₱19,200.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 43 -->
+          <div class="shop-card">
+            <div class="brand">Mouse</div>
+            <div class="image-wrapper">
+            <img src="imago/Logitech MX Master 3s.webp" alt="Product Image" class="front-img">
+            <img src="imago/Logitech MX Master 3s.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Logitech MX Master 3s</h3>
+            <p class="price">₱5,690.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 44 -->
+          <div class="shop-card">
+            <div class="brand">Monitor</div>
+            <div class="image-wrapper">
+            <img src="imago/msi mpg321urx mpg qd oled flat gaming monitor.webp" alt="Product Image" class="front-img">
+            <img src="imago/msi mpg321urx mpg wd oled flat gaming monitor.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>msi mpg321urx oled flat gaming monitor</h3>
+            <p class="price">₱59,395.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 45 -->
+          <div class="shop-card">
+            <div class="brand">Motherboard</div>
+            <div class="image-wrapper">
+            <img src="imago/Gigabyte AORUS X570 Master   .JPG" alt="Product Image" class="front-img">
+            <img src="imago/Gigabyte AORUS X570 Master   .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Gigabyte AORUS X570 Master</h3>
+            <p class="price">₱3,333.33</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 46 -->
+          <div class="shop-card">
+            <div class="brand">SSD</div>
+            <div class="image-wrapper">
+            <img src="imago/Samsung 990 PRO NVMe  .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Samsung 990 PRO NVMe  .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Samsung 990 PRO NVMe</h3>
+            <p class="price">₱5,350.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 47 -->
+          <div class="shop-card">
+            <div class="brand">CPU</div>
+            <div class="image-wrapper">
+            <img src="imago/Intel Core i5-14600K .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Intel core i5-14600K_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Intel Core i5-14600K</h3>
+            <p class="price">₱14,400.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 48 -->
+          <div class="shop-card">
+            <div class="brand">Motherboard</div>
+            <div class="image-wrapper">
+            <img src="imago/ASUS ROG Strix Z790-E Gaming WiFi  .JPG" alt="Product Image" class="front-img">
+            <img src="imago/ASUS ROG Strix Z790-E Gaming WiFi  .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>ASUS ROG Strix Z790-E Gaming WiFi</h3>
+            <p class="price">₱9,300.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 49 -->
+          <div class="shop-card">
+            <div class="brand">RAM</div>
+            <div class="image-wrapper">
+            <img src="imago/Kingston Fury Beast DDR5 .WEBP" alt="Product Image" class="front-img">
+            <img src="imago/Kingston Fury Beast DDR5 .png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Kingston Fury Beast DDR5</h3>
+            <p class="price">₱2,150.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+
+          <!-- CARD 50 -->
+          <div class="shop-card" >
+            <div class="brand">Keyboard</div>
+            <div class="image-wrapper">
+            <img src="imago/Ducky.WEBP" alt="Product Image" class="front-img">
+            <img src="imago/ducky_edited.png" alt="Graphics Cards" class="back-img">
+            </div>
+            <h3>Ducky</h3>
+            <p class="price">₱6,396.00</p>
+            <button class="buy-btn">BUY NOW</button>
+          </div>
+        </div> 
+
+</section>
+
+<div id="cart-details" class="cart-modal">
+    <div class="cart-modal-content">
+        <span class="close-btn">&times;</span> <h2>Your Cart</h2>
+        
+        <ul id="cart-items-list">
+            </ul>
+        
+        <hr>
+        
+        <div id="cart-total">
+            <strong>Total: ₱0.00</strong>
+        </div>
+    </div>
+</div>
+
+
+<!-- FOOTER SECTION -->
+  <footer class="footer">
+    <section class="about-techypc">
+      <h2>TechyPC: Your Smart Choice for Tech and Innovation</h2>
+
+      <div class="about-text" id="aboutText">
+        <p>
+          At TechyPC, we believe technology should be smart, simple, and accessible to everyone. That’s why we’re committed to bringing you top-quality computer components, peripherals, and gadgets that make your digital life easier and more powerful. Whether you’re a gamer, creator, or everyday user, TechyPC helps you build the perfect setup to match your needs and lifestyle.
+        </p>
+
+        <p>
+          Our mission is to make PC shopping fast, affordable, and enjoyable. With an ever-expanding range of motherboards, processors, RAM, SSDs, graphics cards, and accessories, TechyPC provides everything you need to create or upgrade your dream machine — without the stress and confusion of traditional tech buying.
+        </p>
+
+        <p>
+          TechyPC also offers <strong>SmartBuild</strong> — an intelligent PC building tool designed to make compatibility easy. Pick your components, and SmartBuild ensures they all work together flawlessly. Whether you’re building for gaming, editing, or productivity, TechyPC guarantees performance without compromise.
+        </p>
+
+        <p>
+          For customers who prefer quick solutions, we also offer a wide range of <strong>ready-to-use prebuilt desktops</strong>. Each prebuild is professionally assembled, tested, and optimized for maximum efficiency — so you can focus on what matters most: creating, playing, and achieving.
+        </p>
+
+        <p>
+          <strong>Fast and Reliable Delivery</strong><br>
+          Get your items delivered straight to your doorstep with our trusted logistics partners. We prioritize secure packaging, accurate order tracking, and prompt delivery nationwide.
+        </p>
+
+        <p>
+          <strong>Safe and Flexible Payments</strong><br>
+          TechyPC ensures safe transactions through multiple payment options — from digital wallets to bank transfers and COD. Shop confidently knowing your data and privacy are fully protected.
+        </p>
+
+        <p>
+          <strong>Customer Care That Listens</strong><br>
+          We’re more than just a store — we’re a team that listens. Our support specialists are always ready to assist with inquiries, warranty requests, or build advice to make sure your experience is 100% satisfying.
+        </p>
+
+        <p>
+          <strong>Exclusive Deals and Rewards</strong><br>
+          Enjoy limited-time offers, bundle discounts, and loyalty perks when you shop at TechyPC. We love giving back to our community of tech enthusiasts who trust us to power their setups.
+        </p>
+
+        <p>
+          <strong>Join the TechyPC Community</strong><br>
+          Be part of an active online space where tech lovers share builds, tips, and product insights. Follow TechyPC on social media for the latest launches, reviews, and trends in the tech world.
+        </p>
+      </div>
+
+      <button class="toggle-btn" id="toggleBtn">SHOW MORE</button>
+    </section>
+
+    <section id="foota">
+      <div class="footer-bottom">
+        <div class="footer-column">
+          <h4>CUSTOMER SERVICE</h4>
+          <ul>
+            <li>Cancellation Policy</li>
+            <li>Delivery</li>
+            <li>Order And Payments</li>
+            <li>Payment FAQs</li>
+            <li>Billease FAQ</li>
+            <li>Privacy Policy</li>
+            <li>Return And Refunds</li>
+            <li>Service Area Directory</li>
+            <li>Terms And Conditions</li>
+            <li>Warranty Information</li>
+            <li>Warranty Policy</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <ul>
+            <li>Careers</li>
+            <li>Contact Us</li>
+            <li>FAQs</li>
+            <li>News And Articles</li>
+            <li>Our Company</li>
+            <li>Reviews</li>
+            <li>Store Locations</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LINKS</h4>
+          <ul>
+            <li>TechyPC Corporate</li>
+            <li>TechyPC Community</li>
+            <li>Lazada Officual store</li>
+            <li>Shopee Officual store</li>
+          </ul>
+        </div>
+
+        <div class="footer-column social">
+          <img src="imago/weblogomodeRbgN.png" alt="EasyPC Logo" class="footer-logo" />
+          <p>Follow us:</p>
+          <div class="social-icons">
+            <a href="#"><img src="imago/facebook.png" alt=""></a>
+            <a href="#"><img src="imago/twitter.png" alt=""></a>
+            <a href="#"><img src="imago/instagram.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+</body>
+
+<div id="page-overlay" class="page-overlay"></div>
+<div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <span id="cart-close-btn" class="close-btn">&times;</span>
+    </div>
+
+    <ul id="cart-items-list">
+        </ul>
+
+    <div class="cart-footer">
+        <div id="cart-total">
+            <strong>Total: ₱0.00</strong>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+</div>
+
+<div id="checkout-modal" class="cart-modal">
+    <div class="cart-modal-content">
+        <span id="checkout-close-btn" class="close-btn">&times;</span>
+        <h2>Checkout Details</h2>
+        
+        <form id="checkout-form" class="checkout-form">
+            <h3>Shipping Address</h3>
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" required>
+            
+            <label for="address">Address (House No., Street, Brgy)</label>
+            <input type="text" id="address" required>
+
+            <label for="city">City / Municipality</label>
+            <input type="text" id="city" required>
+
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" required>
+
+            <h3>Payment Method</h3>
+            
+            <div class="payment-options">
+                <label>
+                    <input type="radio" name="payment" value="cod"> 
+                    Cash on Delivery (COD)
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="bdo"> 
+                    BDO
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="paymaya"> 
+                    PayMaya
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="bancnet"> 
+                    BancNet
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="paypal"> 
+                    PayPal
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="visa"> 
+                    Visa
+                </label>
+            </div>
+            
+            <button type="submit" class="checkout-btn">Place Order</button>
+        </form>
+    </div>
+</div>
+
+<div id="page-overlay" class="page-overlay"></div>
+<div id="cart-sidebar" class="cart-sidebar"> ... (all the cart content) ... </div>
+<div id="checkout-modal" class="cart-modal"> ... (all the modal content) ... </div>
+
+<script>
+  // Wait for the page to load first
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.querySelector(".search-bar input");
+    const shopCards = document.querySelectorAll(".shop-card");
+
+    // Function that filters products
+    function filterProducts() {
+      const searchValue = searchInput.value.toLowerCase().trim();
+
+      shopCards.forEach(card => {
+        const productName = card.querySelector("h3").textContent.toLowerCase();
+        const productBrand = card.querySelector(".brand").textContent.toLowerCase();
+
+        // If the product name or brand includes the search input, show it
+        if (productName.includes(searchValue) || productBrand.includes(searchValue)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    // Run filter when user types or presses Enter
+    searchInput.addEventListener("input", filterProducts);
+  });
+
+  // ------this are for nav and moving
+  window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
+  const promoBar = document.querySelector(".promo-bar");
+  const hero = document.querySelector(".hero");
+
+  // Get hero section height
+  const heroHeight = hero.offsetHeight;
+
+  // Check scroll position
+  if (window.scrollY > heroHeight - 80) {
+    header.classList.add("scrolled");
+    promoBar.classList.add("visible");
+  } else {
+    header.classList.remove("scrolled");
+    promoBar.classList.remove("visible");
+  }
+});
+
+//for the text show more and show less
+const aboutText = document.getElementById("aboutText");
+const toggleBtn = document.getElementById("toggleBtn");
+
+toggleBtn.addEventListener("click", () => {
+  aboutText.classList.toggle("expanded");
+
+  if (aboutText.classList.contains("expanded")) {
+    toggleBtn.textContent = "SHOW LESS";
+  } else {
+    toggleBtn.textContent = "SHOW MORE";
+  }
+});
+
+
+
+
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let cart = JSON.parse(localStorage.getItem('techyPCCart')) || [];
+
+  const buyButtons = document.querySelectorAll('.buy-btn');
+  const cartIcon = document.getElementById('cart-icon');
+  const cartSidebar = document.getElementById('cart-sidebar');
+  const cartCloseBtn = document.getElementById('cart-close-btn');
+  const cartItemsList = document.querySelector('#cart-sidebar #cart-items-list');
+  const cartTotal = document.querySelector('#cart-sidebar #cart-total');
+  const cartCounter = document.getElementById('cart-counter');
+  const checkoutBtn = document.getElementById('checkout-btn');
+  const pageOverlay = document.getElementById('page-overlay');
+  const checkoutModal = document.getElementById('checkout-modal');
+  const checkoutCloseBtn = document.getElementById('checkout-close-btn');
+  const checkoutForm = document.getElementById('checkout-form');
+
+  function saveCart() {
+    localStorage.setItem('techyPCCart', JSON.stringify(cart));
+  }
+
+  function updateCartDisplay() {
+    if (!cartItemsList || !cartTotal || !cartCounter) return;
+
+    cartItemsList.innerHTML = '';
+    let totalItems = 0, totalPesoAmount = 0;
+
+    if (cart.length === 0) {
+      cartItemsList.innerHTML = '<li style="text-align:center; color:#888;">Your cart is empty.</li>';
+    } else {
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <img src="${item.image}" class="item-image" alt="${item.name}">
+          <div class="item-details">
+            <span class="item-name">${item.name}</span>
+            <span class="item-price">₱${(item.price * item.quantity).toFixed(2)}</span>
+            <div class="quantity-controls">
+              <button class="qty-btn" data-id="${item.id}" data-action="minus">-</button>
+              <span class="qty-display">${item.quantity}</span>
+              <button class="qty-btn" data-id="${item.id}" data-action="plus">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" data-id="${item.id}" data-action="remove">🗑️</button>
+        `;
+        cartItemsList.appendChild(li);
+        totalItems += item.quantity;
+        totalPesoAmount += item.price * item.quantity;
+      });
+    }
+
+    cartCounter.textContent = totalItems;
+    cartCounter.style.display = totalItems > 0 ? 'block' : 'none';
+    cartTotal.innerHTML = `<strong>Total: ₱${totalPesoAmount.toFixed(2)}</strong>`;
+  }
+
+  function addToCart(event) {
+    const product = event.target.closest('.shop-card');
+    const name = product.querySelector('h3').textContent.trim();
+    const price = parseFloat(product.querySelector('.price').textContent.replace(/[₱,]/g, ''));
+    const image = product.querySelector('.front-img').src;
+    const existing = cart.find(i => i.id === name);
+
+    if (existing) existing.quantity++;
+    else cart.push({ id: name, name, price, image, quantity: 1 });
+
+    saveCart();
+    updateCartDisplay();
+    showCartSidebar();
+  }
+
+  function handleCartAction(e) {
+    const id = e.target.dataset.id;
+    const action = e.target.dataset.action;
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
+
+    if (action === 'plus') item.quantity++;
+    if (action === 'minus') item.quantity--;
+    if (action === 'remove' || item.quantity <= 0)
+      cart = cart.filter(i => i.id !== id);
+
+    saveCart();
+    updateCartDisplay();
+  }
+
+  function showCartSidebar() {
+    cartSidebar.classList.add('show');
+    pageOverlay.classList.add('show');
+  }
+  function hideCartSidebar() {
+    cartSidebar.classList.remove('show');
+    pageOverlay.classList.remove('show');
+  }
+
+  function openCheckout() {
+    checkoutModal.classList.add('show');
+  }
+  function closeCheckout() {
+    checkoutModal.classList.remove('show');
+  }
+
+  function placeOrder(e) {
+    e.preventDefault();
+    alert('Order placed successfully!');
+    cart = [];
+    saveCart();
+    updateCartDisplay();
+    closeCheckout();
+    hideCartSidebar();
+  }
+
+  buyButtons.forEach(btn => btn.addEventListener('click', addToCart));
+  cartItemsList.addEventListener('click', handleCartAction);
+  cartIcon.addEventListener('click', showCartSidebar);
+  cartCloseBtn.addEventListener('click', hideCartSidebar);
+  pageOverlay.addEventListener('click', hideCartSidebar);
+  checkoutBtn.addEventListener('click', openCheckout);
+  checkoutCloseBtn.addEventListener('click', closeCheckout);
+  checkoutForm.addEventListener('submit', placeOrder);
+
+  // Initialize on load
+  updateCartDisplay();
+});
+</script>
+
+
+
+
+
+</html>
